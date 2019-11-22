@@ -72,17 +72,32 @@ namespace PostXMLMessage
                         // This is the default for Fiddler
                         request.Proxy = new WebProxy("127.0.0.1", 8888);
 
+                        // NOTE. This is WIP, and so the override from the normal 127.0.0.1:8888 might not actually work!
+                        // Is there a proxy override set?
                         if (proxyOverride.Checked)
                         {
-                            if (IsEmpty(proxyNameTextBox.Text))
-                                // Error
+                            string proxyName = proxyNameTextBox.Text;
+                            string proxyPort = proxyPortTextBox.Text;
 
-                            if (IsEmpty(proxyPortTextBox.Text))
-                                // Error
+                            // If no proxy name set, then default back to 127.0.0.1
+                            if (IsEmpty(proxyName))
+                            {
+                                proxyName = "127.0.0.1";
+                                string message = string.Format("No 'Override' Proxy IP/Name set. Defaulting to '127.0.0.1'");
+                                MessageBox.Show(message, "Unspecified 'Override' Proxy IP/Name", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
 
+                            // If no proxy port set, then default back to 8888
+                            if (IsEmpty(proxyPort))
+                            {
+                                proxyPort = "8888";
+                                string message = string.Format("No 'Override' Proxy Port set. Defaulting to port '8888'");
+                                MessageBox.Show(message, "Unspecified 'Override' Proxy Port", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
 
-                            request.Proxy = new WebProxy(proxyNameTextBox.Text, int.Parse(proxyPortTextBox.Text));
-
+                            // Use 'override' values set
+                            if ((proxyName != "127.0.0.1") && (proxyPort != "8888"))
+                                request.Proxy = new WebProxy(proxyNameTextBox.Text, int.Parse(proxyPort));
                         }
                     }
                   
