@@ -51,9 +51,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(603, 20);
             this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "https://delaware-dev01.blueprintserver.com/deapi/delaware.asp?usr=XXXXXX&pwd=XXXX" +
-    "XX";
-            // 
+            this.textBox1.Text = "https://delaware-dev01.blueprintserver.com/deapi/delaware.asp?usr=XXXXXX&pwd=XXXXXX";
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(95, 239);
@@ -93,6 +91,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(84, 21);
             this.comboBox1.TabIndex = 7;
+            this.comboBox1.SelectedIndex = 4;
             // 
             // textBox2
             // 
@@ -182,6 +181,7 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(84, 21);
             this.comboBox2.TabIndex = 16;
+            this.comboBox2.SelectedIndex = 2;
             // 
             // label2
             // 
