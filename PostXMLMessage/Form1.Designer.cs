@@ -47,11 +47,13 @@
             // 
             // textBox1
             // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(15, 29);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(603, 20);
+            this.textBox1.Size = new System.Drawing.Size(603, 21);
             this.textBox1.TabIndex = 0;
             this.textBox1.Text = "https://delaware-dev01.blueprintserver.com/deapi/delaware.asp?usr=XXXXXX&pwd=XXXXXX";
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(95, 239);
