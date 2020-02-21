@@ -178,7 +178,8 @@
             this.comboBox2.Items.AddRange(new object[] {
             "1.0",
             "1.1",
-            "1.2"});
+            "1.2",
+            "1.3"});
             this.comboBox2.Location = new System.Drawing.Point(283, 190);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(84, 21);

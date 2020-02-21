@@ -257,17 +257,16 @@ namespace PostXMLMessage
             ServicePointManager.SecurityProtocol = 0L;      // Initialise to SystemDefault (this is zero).
 
             if (nSecType == 0L)
-                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls;                // TLS v1.0
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls;        // TLS v1.0
             else
-                if (nSecType == 1L)
-                    ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls11;          // TLS v1.1
-                else
-                    if (nSecType == 2L)
-                        ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;      // TLS v1.2
-
-
-            // ** NOTE ** - TLS v1.3 can be supported when POST Tool App's Min. Sys Requirements is upgraded to .NET Framework v4.8 (currently Min. is v4.5.2)
-            // Not going to worry about this until someone says we need this, and so something to do for the future...
+            if (nSecType == 1L)
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls11;      // TLS v1.1
+            else
+            if (nSecType == 2L)
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;      // TLS v1.2
+            else
+            if (nSecType == 3L)
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls13;      // TLS v1.3    
 
             return ServicePointManager.SecurityProtocol;
         }
